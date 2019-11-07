@@ -165,12 +165,13 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
             character.Description = Console.ReadLine();
             Console.Write("Annual Gross Income");
             character.AverageAnnualGross = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Grocery list.");
+            Console.WriteLine("Item:");
+            Console.WriteLine("Quantity:");
+            Console.WriteLine("Enter quit to exit");
             while (Response != "quit")
             {
-                Console.WriteLine("Enter Grocey list.");
-                Console.WriteLine("Item");
-                Console.WriteLine("Qauntiy");
-                Console.WriteLine("Quit to quit");
+                
                 Response = Console.ReadLine();
                 if (Response != "quit")
                 {
@@ -232,12 +233,13 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
             character.Description = Console.ReadLine();
             Console.Write("Annual Gross Income");
             character.AverageAnnualGross = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Grocery list.");
+            Console.WriteLine("Item:");
+            Console.WriteLine("Quantity:");
+            Console.WriteLine("Enter quit to exit");
             while (Response != "quit")
             {
-                Console.WriteLine("Enter Grocey list.");
-                Console.WriteLine("Item");
-                Console.WriteLine("Qauntiy");
-                Console.WriteLine("Quit to quit");
+                
                 Response = Console.ReadLine();
                 if (Response != "quit")
                 {
