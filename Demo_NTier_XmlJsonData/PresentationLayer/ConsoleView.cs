@@ -119,12 +119,19 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
 
         private static void DisplayUpdateCharacter()
         {
+            int Response2 = 0;
+            string Response = "g";
+           
+            
             DisplayScreenHeader("Update Character Screen");
             List<FlintstoneCharacter> characters = _fcBusiness.AllFlintstoneCharacters();
 
             int id = DisplayGetCharacterIdFromList(characters);
 
             FlintstoneCharacter character = _fcBusiness.FlintstoneCharacterById(id);
+
+            
+            character.GroceryList = new List<GroceryItem>();
 
             _fcBusiness.DeleteFlintstoneCharacter(character);
             //deleting ^
@@ -158,6 +165,20 @@ namespace Demo_NTier_XmlJsonData.PresentationLayer
             character.Description = Console.ReadLine();
             Console.Write("Annual Gross Income");
             character.AverageAnnualGross = int.Parse(Console.ReadLine());
+            while (Response != "quit")
+            {
+                Console.WriteLine("Enter Grocey list.");
+                Console.WriteLine("Item");
+                Console.WriteLine("Qauntiy");
+                Console.WriteLine("Quit to quit");
+                Response = Console.ReadLine();
+                if (Response != "quit")
+                {
+                    Response2 = int.Parse(Console.ReadLine());
+                    character.GroceryList.Add(new GroceryItem { Name = Response, Quantity = Response2 });
+
+                }
+            }
 
             _fcBusiness.AddFlintstoneCharacter(character);
 
